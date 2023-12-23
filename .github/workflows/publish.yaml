@@ -4,6 +4,7 @@ on:
   push:
     branches:
       - main
+      - build
 
 jobs:
   test:
@@ -27,6 +28,6 @@ jobs:
         with:
           private-key: ${{ secrets.GPG_PRIVATE_KEY }}
           private-key-passphrase: ${{ secrets.GPG_PRIVATE_KEY_PASSWORD }}
-      - run: |
-          git tag -a v${{ steps.version.outputs.version }} -m "v${{ steps.version.outputs.version }}"
-          git push origin v${{ steps.version.outputs.version }}
+      # - run: |
+      #     git tag -a v${{ steps.version.outputs.version }} -m "v${{ steps.version.outputs.version }}"
+      #     git push origin v${{ steps.version.outputs.version }}
