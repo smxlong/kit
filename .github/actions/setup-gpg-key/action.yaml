@@ -19,12 +19,14 @@ runs:
   using: composite
   steps:
     - name: Import GPG key
+      shell: bash
       run: |
         echo "${{ inputs.private-key }}" > private.key
         echo "${{ inputs.private-key-passphrase }}" | gpg --batch --yes --passphrase-fd 0 --import private.key
         rm private.key
 
     - name: Set up GPG key
+      shell: bash
       run: |
         git config --global user.signingkey ${{ inputs.user-email }}
         git config --global user.name "${{ inputs.user-name }}"
