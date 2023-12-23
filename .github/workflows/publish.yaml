@@ -1,0 +1,32 @@
+name: Publish
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - uses: ./.github/actions/test
+        with:
+          go-version: "1.21"
+
+  publish:
+    runs-on: ubuntu-latest
+    needs:
+      - test
+    steps:
+      - uses: actions/checkout@v3
+      - id: version
+        run: |
+          echo version=$(jq -r .version version.json) >> $GITHUB_OUTPUT
+      - uses: ./.github/actions/setup-gpg-key
+        with:
+          private-key: ${{ secrets.GPG_PRIVATE_KEY }}
+          private-key-passphrase: ${{ secrets.GPG_PRIVATE_KEY_PASSWORD }}
+      - run: |
+          git tag -a v${{ steps.version.outputs.version }} -m "v${{ steps.version.outputs.version }}"
+          git push origin v${{ steps.version.outputs.version }}

@@ -1,0 +1,21 @@
+
+description: Run tests
+
+inputs:
+  go-version:
+    description: Go version
+    required: false
+    default: "1.21"
+  test-flags:
+    description: Flags to pass to `go test`
+    required: false
+    default: -v
+
+runs:
+  using: composite
+  steps:
+    - uses: actions/checkout@v3
+    - uses: actions/setup-go@v5
+      with:
+        go-version: ${{ inputs.go-version }}
+    - run: go test ${{ inputs.test-flags }} ./...

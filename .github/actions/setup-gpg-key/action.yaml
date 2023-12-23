@@ -1,0 +1,32 @@
+description: Import and set up a GPG key for signing commits
+inputs:
+  private-key:
+    description: The private key to import
+    required: true
+  private-key-passphrase:
+    description: The passphrase for the private key
+    required: true
+  user-name:
+    description: The user name to use for the GPG key
+    required: true
+    default: Scott Long
+  user-email:
+    description: The user email to use for the GPG key
+    required: true
+    default: smxlong@gmail.com
+
+runs:
+  using: composite
+  steps:
+    - name: Import GPG key
+      run: |
+        echo "${{ inputs.private-key }}" > private.key
+        echo "${{ inputs.private-key-passphrase }}" | gpg --batch --yes --passphrase-fd 0 --import private.key
+        rm private.key
+
+    - name: Set up GPG key
+      run: |
+        git config --global user.signingkey ${{ inputs.user-email }}
+        git config --global user.name "${{ inputs.user-name }}"
+        git config --global user.email "${{ inputs.user-email }}"
+        git config --global commit.gpgsign true
