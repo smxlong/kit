@@ -1,3 +1,7 @@
+## 0.1.3
+
+- Added `logger` package
+
 ## 0.1.2
 
 - BUGFIX: publish.yaml: fetch tags before looking for an existing tag
