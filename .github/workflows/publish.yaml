@@ -20,8 +20,10 @@ jobs:
         run: |
           echo version=$(jq -r .version version.json) >> $GITHUB_OUTPUT
       - run: |
+          git fetch --tags
           if git rev-parse v${{ steps.version.outputs.version }} >/dev/null 2>&1; then
-            echo "Tag v${{ steps.version.outputs.version }} already exists"
+            echo "Error: v${{ steps.version.outputs.version }} tag already exists."
+            echo "Error: Version in version.json must be incremented before publishing."
             exit 1
           fi
 
