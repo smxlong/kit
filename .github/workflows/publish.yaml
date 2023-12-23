@@ -20,6 +20,7 @@ jobs:
         run: |
           echo version=$(jq -r .version version.json) >> $GITHUB_OUTPUT
       - run: |
+          git fetch --tags
           if git rev-parse v${{ steps.version.outputs.version }} >/dev/null 2>&1; then
             echo "Tag v${{ steps.version.outputs.version }} already exists"
             exit 1
