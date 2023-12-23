@@ -1,0 +1,19 @@
+description: Import and set up a GPG key for signing commits
+inputs:
+  user-name:
+    description: The user name to use
+    required: true
+    default: Scott Long
+  user-email:
+    description: The user email to use
+    required: true
+    default: smxlong@gmail.com
+
+runs:
+  using: composite
+  steps:
+    - name: Set up git
+      shell: bash
+      run: |
+        git config --global user.name "${{ inputs.user-name }}"
+        git config --global user.email "${{ inputs.user-email }}"

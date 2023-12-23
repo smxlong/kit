@@ -1,0 +1,15 @@
+
+description: Run tests
+
+inputs:
+  test-flags:
+    description: Flags to pass to `go test`
+    required: false
+    default: -v
+
+runs:
+  using: composite
+  steps:
+    - uses: actions/checkout@v3
+    - shell: bash
+      run: go test ${{ inputs.test-flags }} ./...
