@@ -29,5 +29,5 @@ jobs:
           private-key: ${{ secrets.GPG_PRIVATE_KEY }}
           private-key-passphrase: ${{ secrets.GPG_PRIVATE_KEY_PASSWORD }}
       - run: |
-          git tag -s -a v${{ steps.version.outputs.version }} -m "v${{ steps.version.outputs.version }}"
+          GIT_TRACE=1 git tag -s -a v${{ steps.version.outputs.version }} -m "v${{ steps.version.outputs.version }}"
           #git push origin v${{ steps.version.outputs.version }}
