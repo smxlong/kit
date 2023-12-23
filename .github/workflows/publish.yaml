@@ -53,6 +53,8 @@ jobs:
     steps:
       - uses: actions/checkout@v3
       - uses: ./.github/actions/setup-git
+        with:
+          github-token: ${{ secrets.GH_TOKEN }}
       - id: version
         run: |
           echo version=$(jq -r .version version.json) >> $GITHUB_OUTPUT
