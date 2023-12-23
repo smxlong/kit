@@ -1,3 +1,7 @@
+## 0.1.2
+
+- BUGFIX: publish.yaml: fetch tags before looking for an existing tag
+
 ## 0.1.1
 
 - `signal` package renamed to `signalcontext` and its `Context` method renamed
