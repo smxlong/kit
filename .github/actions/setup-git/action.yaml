@@ -8,9 +8,6 @@ inputs:
     description: The user email to use
     required: true
     default: smxlong@gmail.com
-  github-token:
-    description: The GitHub token to use
-    required: true
 
 runs:
   using: composite
@@ -20,4 +17,3 @@ runs:
       run: |
         git config --global user.name "${{ inputs.user-name }}"
         git config --global user.email "${{ inputs.user-email }}"
-        gh auth login --with-token < <(echo "${{ inputs.github-token }}")
