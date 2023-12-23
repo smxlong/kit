@@ -24,10 +24,6 @@ jobs:
       - id: version
         run: |
           echo version=$(jq -r .version version.json) >> $GITHUB_OUTPUT
-      - uses: ./.github/actions/setup-gpg-key
-        with:
-          private-key: ${{ secrets.GPG_PRIVATE_KEY }}
-          private-key-passphrase: ${{ secrets.GPG_PRIVATE_KEY_PASSWORD }}
       - run: |
-          GIT_TRACE=1 git tag -s -a v${{ steps.version.outputs.version }} -m "v${{ steps.version.outputs.version }}"
+          git tag -a v${{ steps.version.outputs.version }} -m "v${{ steps.version.outputs.version }}"
           #git push origin v${{ steps.version.outputs.version }}
