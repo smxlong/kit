@@ -129,9 +129,9 @@ func statusCodeOrDefault(statusCode int, res interface{}) int {
 	return statusCode
 }
 
-func Implement[IReq, IResp any](impl func(IReq) (IResp, error)) Implementation {
+func Implement[IReq, IResp any](impl func(context.Context, IReq) (IResp, error)) Implementation {
 	return func(ctx context.Context, req Request) Response {
-		resp, err := impl(req.(IReq))
+		resp, err := impl(ctx, req.(IReq))
 		if err != nil {
 			return err
 		}
