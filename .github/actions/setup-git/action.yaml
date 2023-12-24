@@ -1,4 +1,4 @@
-description: Import and set up a GPG key for signing commits
+description: Set up git
 inputs:
   user-name:
     description: The user name to use

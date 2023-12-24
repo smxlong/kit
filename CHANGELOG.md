@@ -1,3 +1,7 @@
+## 0.1.4
+
+- Added `rest` package
+
 ## 0.1.3
 
 - Added `logger` package
