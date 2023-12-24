@@ -19,12 +19,15 @@ type ErrorResponse struct {
 	Error string `json:"error"`
 }
 
+// Implementation is the implementation of a REST endpoint.
+type Implementation func(context.Context, Request) Response
+
 // Handler is a REST handler.
 type Handler struct {
 	// NewRequest returns a new request for the handler.
 	NewRequest func() Request
 	// Handle handles the request.
-	Handle func(context.Context, Request) Response
+	Handle Implementation
 }
 
 // Endpoint is the specification of a REST endpoint.
