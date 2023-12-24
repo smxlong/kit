@@ -1,6 +1,7 @@
 ## 0.1.6
 
 - Added `middleware` package
+- Added `Sync` method to `logger.Logger`
 
 ## 0.1.5
 
