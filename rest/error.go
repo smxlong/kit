@@ -71,4 +71,6 @@ var (
 	ErrNotSupported = NewError("not supported", http.StatusMethodNotAllowed)
 	// ErrUnauthorized is returned when a request is unauthorized.
 	ErrUnauthorized = NewError("unauthorized", http.StatusUnauthorized)
+	// ErrConflict is returned when a request causes a conflict.
+	ErrConflict = NewError("conflict", http.StatusConflict)
 )
