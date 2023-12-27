@@ -15,6 +15,7 @@ type Logger interface {
 	Fatalw(msg string, keysAndValues ...interface{})
 	Panicw(msg string, keysAndValues ...interface{})
 	With(keysAndValues ...interface{}) Logger
+	Sync() error
 }
 
 // logger is a wrapper around zap.SugaredLogger.
