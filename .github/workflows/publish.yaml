@@ -47,6 +47,9 @@ jobs:
         with:
           go-version: "1.21"
       - uses: ./.github/actions/test
+      - uses: codecov/codecov-action@v3
+        with:
+          token: ${{ secrets.CODECOV_TOKEN }}
 
   publish:
     if: github.ref == 'refs/heads/main'
