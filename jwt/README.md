@@ -1,4 +1,4 @@
-<h1>kit/jwt</h1>
+<h1>github.com/smxlong/kit/jwt</h1>
 
 This package provides JWT functionality for Go's `net/http` package.
 
