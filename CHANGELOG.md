@@ -1,3 +1,7 @@
+## 0.1.7
+
+- Added `jwt` package
+
 ## 0.1.6
 
 - Added `middleware` package
