@@ -1,3 +1,3 @@
-## kit - helpful Go stuff
+# smxlong/kit
 
-adding a test
+Helpful Go stuff.
