@@ -1,3 +1,7 @@
+## 0.2.1
+
+- Added codecov output to GitHub workflow
+
 ## 0.2.0
 
 - Added MIT license

@@ -5,7 +5,7 @@ inputs:
   test-flags:
     description: Flags to pass to `go test`
     required: false
-    default: -v
+    default: -v -coverprofile=coverage.txt -covermode=atomic
 
 runs:
   using: composite
