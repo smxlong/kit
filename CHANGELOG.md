@@ -1,3 +1,7 @@
+## 0.2.0
+
+- Added MIT license
+
 ## 0.1.7
 
 - Added `jwt` package
