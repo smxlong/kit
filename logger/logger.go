@@ -39,6 +39,12 @@ func New(opts ...Option) (Logger, error) {
 	config.EncoderConfig.EncodeTime = zapcore.ISO8601TimeEncoder
 	config.EncoderConfig.EncodeLevel = zapcore.CapitalLevelEncoder
 	config.EncoderConfig.EncodeCaller = zapcore.ShortCallerEncoder
+	if options.stacktrace {
+		config.EncoderConfig.EncodeCaller = zapcore.FullCallerEncoder
+		config.EncoderConfig.StacktraceKey = "stacktrace"
+	} else {
+		config.DisableStacktrace = true
+	}
 	l, err := config.Build()
 	if err != nil {
 		return nil, err
