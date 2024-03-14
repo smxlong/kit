@@ -1,6 +1,6 @@
 ## 0.4.1
 
-- Maintenance: upgrade checkout action to v4
+- Maintenance: upgrade github action versions
 
 ## 0.4.0
 
