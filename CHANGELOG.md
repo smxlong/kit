@@ -1,3 +1,7 @@
+## 0.4.1
+
+- Maintenance: upgrade github action versions
+
 ## 0.4.0
 
 - Added `service` package
