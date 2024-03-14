@@ -16,6 +16,7 @@ type Logger interface {
 	Panicw(msg string, keysAndValues ...interface{})
 	With(keysAndValues ...interface{}) Logger
 	Sync() error
+	SafeSync()
 }
 
 // logger is a wrapper around zap.SugaredLogger.
@@ -55,4 +56,10 @@ func New(opts ...Option) (Logger, error) {
 // With returns a new Logger with the given keys and values.
 func (l *logger) With(keysAndValues ...interface{}) Logger {
 	return &logger{l.SugaredLogger.With(keysAndValues...)}
+}
+
+// SafeSync flushes any buffered log entries. It is "safe" in that it does
+// not return an error.
+func (l *logger) SafeSync() {
+	_ = l.Sync()
 }

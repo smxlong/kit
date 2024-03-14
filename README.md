@@ -16,6 +16,8 @@ Helpful Go stuff.
 
 ### [rest](https://pkg.go.dev/github.com/smxlong/kit/rest)
 
+### [service](https://pkg.go.dev/github.com/smxlong/kit/service)
+
 ### [signalcontext](https://pkg.go.dev/github.com/smxlong/kit/signalcontext)
 
 ### [webserver](https://pkg.go.dev/github.com/smxlong/kit/webserver)
