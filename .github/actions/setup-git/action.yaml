@@ -1,4 +1,6 @@
+name: Set up git
 description: Set up git
+
 inputs:
   user-name:
     description: The user name to use

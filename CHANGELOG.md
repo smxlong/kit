@@ -1,3 +1,8 @@
+## 0.5.0
+
+- Added `boolean` package
+- Added `mapindex` package
+
 ## 0.4.1
 
 - Maintenance: upgrade github action versions
