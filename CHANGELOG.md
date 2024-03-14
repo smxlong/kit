@@ -1,3 +1,8 @@
+## 0.4.0
+
+- Added `service` package
+- Added `logger.Logger SafeSync()` method
+
 ## 0.3.0
 
 - Added `WithStacktrace` option to `logger` package
