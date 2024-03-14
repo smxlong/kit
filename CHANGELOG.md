@@ -1,3 +1,7 @@
+## 0.5.1
+
+- Bump version to work around stale go proxy cache :(
+
 ## 0.5.0
 
 - Added `boolean` package
