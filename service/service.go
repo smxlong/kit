@@ -28,10 +28,7 @@ func Run(service func(ctx context.Context, l logger.Logger) error) error {
 	if debug {
 		opts = append(opts, logger.WithLevel("DEBUG"))
 	}
-	l, err := logger.New(opts...)
-	if err != nil {
-		return err
-	}
+	l, _ := logger.New(opts...)
 
 	l.Debugw("service started")
 	defer l.Debugw("service ended")
