@@ -1,3 +1,8 @@
+## 0.5.2
+
+- Added `service.Main` function, a convenience function for running a service
+  with a `Run` method.
+
 ## 0.5.1
 
 - Bump version to work around stale go proxy cache :(
