@@ -212,3 +212,14 @@ func Test_main_Propagates_Error_From_Run(t *testing.T) {
 	})
 	require.Equal(t, 1, code)
 }
+
+func Test_Main_Success(t *testing.T) {
+	s := &testServiceRunOnly{
+		testServiceFunctions{
+			run: func(ctx context.Context, l logger.Logger) error {
+				return nil
+			},
+		},
+	}
+	Main("test", "test", s)
+}
