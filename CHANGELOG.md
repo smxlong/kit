@@ -1,3 +1,7 @@
+## 0.5.3
+
+- Updated dependencies.
+
 ## 0.5.2
 
 - Added `service.Main` function, a convenience function for running a service
