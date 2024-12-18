@@ -1,3 +1,3 @@
 package kit
 
-const Version = "0.5.3"
+const Version = "0.6.0"

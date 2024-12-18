@@ -1,3 +1,8 @@
+## 0.6.0
+
+- Added `webserver.ServeTLS` and `webserver.ListenAndServeTLS` functions.
+- Updated dependencies.
+
 ## 0.5.3
 
 - Updated dependencies.
