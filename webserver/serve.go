@@ -16,3 +16,14 @@ func Serve(ctx context.Context, server *http.Server, l net.Listener, opts ...Opt
 func ListenAndServe(ctx context.Context, server *http.Server, opts ...Option) error {
 	return run(ctx, server, server.ListenAndServe, opts...)
 }
+
+// ServeTLS runs the http.Server until the context is canceled or an error occurs.
+func ServeTLS(ctx context.Context, server *http.Server, l net.Listener, certfile, keyfile string, opts ...Option) error {
+	return run(ctx, server, func() error { return server.ServeTLS(l, certfile, keyfile) }, opts...)
+}
+
+// ListenAndServeTLS runs the http.Server until the context is canceled or an error
+// occurs.
+func ListenAndServeTLS(ctx context.Context, server *http.Server, certfile, keyfile string, opts ...Option) error {
+	return run(ctx, server, func() error { return server.ListenAndServeTLS(certfile, keyfile) }, opts...)
+}
