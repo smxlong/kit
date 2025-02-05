@@ -8,6 +8,8 @@ Helpful Go stuff.
 
 ## Packages
 
+### [env](https://pkg.go.dev/github.com/smxlong/kit/env)
+
 ### [jwt](https://pkg.go.dev/github.com/smxlong/kit/jwt)
 
 ### [logger](https://pkg.go.dev/github.com/smxlong/kit/logger)

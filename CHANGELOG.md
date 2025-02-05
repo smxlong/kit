@@ -1,3 +1,7 @@
+## 0.7.0
+
+- Added `env` package
+
 ## 0.6.0
 
 - Added `webserver.ServeTLS` and `webserver.ListenAndServeTLS` functions.
