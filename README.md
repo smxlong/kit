@@ -23,3 +23,5 @@ Helpful Go stuff.
 ### [signalcontext](https://pkg.go.dev/github.com/smxlong/kit/signalcontext)
 
 ### [webserver](https://pkg.go.dev/github.com/smxlong/kit/webserver)
+
+### [work](https://pkg.go.dev/github.com/smxlong/kit/work)
