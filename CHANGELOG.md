@@ -1,3 +1,7 @@
+## 0.8.0
+
+- Added `work` package
+
 ## 0.7.0
 
 - Added `env` package
