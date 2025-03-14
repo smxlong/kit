@@ -1,3 +1,14 @@
+## 0.8.1
+
+- Added functions to `webserver`:
+  - `Task` returns a `work.Task` that runs a web server until context cancelation,
+    suitable for use in `work.Pool`.
+  - `TaskTLS` - same as `Task`, but for TLS servers.
+  - `TaskWithShutdownTimeout` - same as `Task`, but with a custom shutdown
+    timeout.
+  - `TaskWithShutdownTimeoutTLS` - same as `TaskTLS`, but with a custom shutdown
+    timeout.
+
 ## 0.8.0
 
 - Added `work` package
