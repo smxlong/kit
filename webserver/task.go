@@ -16,6 +16,11 @@ type serverTask struct {
 
 // run runs the http.Server until the context is canceled.
 func (t *serverTask) run(ctx context.Context) error {
+	originalHandler := t.server.Handler
+	t.server.Handler = http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
+		r = r.WithContext(ctx)
+		originalHandler.ServeHTTP(w, r)
+	})
 	errch := make(chan error, 1)
 	defer close(errch)
 	go func() {
