@@ -3,6 +3,10 @@
 - Tasks created with `webserver.Task*` now propagate context cancelation to the
   webserver request context (this is done by wrapping the server's Handler
   in a middleware that sets the request context to the task's context).
+- `webserver.ListenAndServer` and `webserver.ListenAndServeTLS` now
+  propagate context cancelation to the server's request context (this is done
+  by wrapping the server's Handler in a middleware that sets the request
+  context to the server's context).
 - Updated dependencies.
 
 ## 0.8.1
