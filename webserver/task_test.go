@@ -19,7 +19,7 @@ func Test_that_Task_can_be_canceled(t *testing.T) {
 		Handler: http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
 			<-r.Context().Done()
 			called++
-			w.Write([]byte("Request canceled"))
+			_, _ = w.Write([]byte("Request canceled"))
 		}),
 	}))
 	p.Run(func(ctx context.Context) error {
