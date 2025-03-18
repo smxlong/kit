@@ -1,3 +1,7 @@
+## 0.9.0
+
+- Added `work.Sleep` and `work.Timeout`.
+
 ## 0.8.2
 
 - Tasks created with `webserver.Task*` now propagate context cancelation to the
